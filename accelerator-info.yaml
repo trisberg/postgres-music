@@ -1,0 +1,31 @@
+id: de611d2c-6d40-4c39-a29e-8ca2cc1e2c09
+name: spring-music
+timestamp: 2024-11-13T21:57:01.636817Z
+source: INTELLIJ
+username: risbergt
+fragments:
+  java-version:
+    name: java-version
+    git:
+      url: https://github.com/vmware-tanzu/application-accelerator-samples
+      subPath: fragments/java-version
+      ref: main
+  build-wrapper-gradle:
+    name: build-wrapper-gradle
+    git:
+      url: https://github.com/vmware-tanzu/application-accelerator-samples
+      subPath: fragments/build-wrapper-gradle
+      ref: main
+accelerator:
+  name: spring-music
+  git:
+    url: https://github.com/vmware-tanzu/application-accelerator-samples.git
+    subPath: spring-music
+    ref: main
+options:
+  databaseType: postgres
+  deploymentType: tpfork8s
+  persistenceType: jpa
+  includeBuildToolWrapper: true
+  javaVersion: "21"
+  projectName: postgres-music
