@@ -45,7 +45,7 @@ docker run --rm --name postgres -p 5432:5432 -e POSTGRES_PASSWORD=password -d po
 Then start the application:
 
 ```shell
-java -Dspring.profiles.active=postgresql -jar build/libs/postgres-music-1.0.0.jar
+java -Dspring.profiles.active=postgres -jar build/libs/postgres-music-1.0.0.jar
 ```
 
 Access the application by opening your browser using the URL [http://localhost:8080](http://localhost:8080)
@@ -83,7 +83,7 @@ Just run:
 tanzu deploy
 ```
 
-### Create the service and bind it to the app
+### Check the status of the service bound to the app
 
 The deployment includes a PostgreSQL instance using a provided service type.
 The instance is bound to the app.
@@ -94,6 +94,11 @@ You can list the services created using:
 tanzu services list
 ```
 
+You can show the status of the service using:
+
+```shell
+tanzu services get PostgreSQLInstance/music
+```
 
 ### Check the status of the app deployment
 

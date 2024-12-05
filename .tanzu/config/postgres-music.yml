@@ -15,7 +15,7 @@ spec:
     path: ../..
   nonSecretEnv:
   - name: SPRING_PROFILES_ACTIVE
-    value: postgresql
+    value: postgres
   ports:
   - name: main
     port: 8080

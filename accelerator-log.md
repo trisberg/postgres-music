@@ -21,11 +21,12 @@
 ┃ ┃ Debug LICENSE didn't match [accelerator.yaml, accelerator.axl] -> included
 ┃ ┃ Debug deploy/tpfork8s/tanzu.yml didn't match [accelerator.yaml, accelerator.axl] -> included
 ┃ ┃ Debug deploy/tpfork8s/.tanzu/config/spring-music.yml didn't match [accelerator.yaml, accelerator.axl] -> included
-┃ ┃ Debug deploy/tpfork8s/.tanzu/config/spring-music-mysql-instance.yml didn't match [accelerator.yaml, accelerator.axl] -> included
-┃ ┃ Debug deploy/tpfork8s/.tanzu/config/spring-music-mongodb-instance.yml didn't match [accelerator.yaml, accelerator.axl] -> included
-┃ ┃ Debug deploy/tpfork8s/.tanzu/config/spring-music-binding.yml didn't match [accelerator.yaml, accelerator.axl] -> included
-┃ ┃ Debug deploy/tpfork8s/.tanzu/config/spring-music-redis-instance.yml didn't match [accelerator.yaml, accelerator.axl] -> included
-┃ ┃ Debug deploy/tpfork8s/.tanzu/config/spring-music-postgresql-instance.yml didn't match [accelerator.yaml, accelerator.axl] -> included
+┃ ┃ Debug deploy/tpfork8s/.tanzu/config/httproute-spring-music.yml didn't match [accelerator.yaml, accelerator.axl] -> included
+┃ ┃ Debug deploy/tpfork8s/.tanzu/config/postgresql-instance-music.yml didn't match [accelerator.yaml, accelerator.axl] -> included
+┃ ┃ Debug deploy/tpfork8s/.tanzu/config/redis-instance-music.yml didn't match [accelerator.yaml, accelerator.axl] -> included
+┃ ┃ Debug deploy/tpfork8s/.tanzu/config/service-binding-music.yml didn't match [accelerator.yaml, accelerator.axl] -> included
+┃ ┃ Debug deploy/tpfork8s/.tanzu/config/mysql-instance-music.yml didn't match [accelerator.yaml, accelerator.axl] -> included
+┃ ┃ Debug deploy/tpfork8s/.tanzu/config/mongodb-instance-music.yml didn't match [accelerator.yaml, accelerator.axl] -> included
 ┃ ┃ Debug accelerator.yaml matched [accelerator.yaml, accelerator.axl] -> excluded
 ┃ ┃ Debug README.md didn't match [accelerator.yaml, accelerator.axl] -> included
 ┃ ┃ Debug .gitignore didn't match [accelerator.yaml, accelerator.axl] -> included
@@ -72,7 +73,7 @@
 ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1] (IfElse)
 ┃ ┃ ┃ ┃ engine.transformations[1].validated.transformations[1].otherwise (IfElse)
 ┃ ┃ ┃ ┃ engine.transformations[1].validated.transformations[1].otherwise.then (Chain)
-┃ ┃ ┃ ┃  Info Running Chain(ApplyTo, ApplyTo, IfElse, IfElse, IfElse, IfElse, IfElse, Select)
+┃ ┃ ┃ ┃  Info Running Chain(ApplyTo, ApplyTo, ApplyTo, IfElse, IfElse, IfElse, IfElse, IfElse, Select)
 ┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[0].apply (Chain)
 ┃ ┃ ┃ ┃ ┃  Info Running Chain(ReplaceSnippet, RewritePath)
 ┃ ┃ ┃ ┃ ┃ ╺  Info Will replace [spring-music->postgres-music]
@@ -84,28 +85,34 @@
 ┃ ┃ ┃ ┃ ┃ ┗  Info Will replace [spring-music->postgres-music]
 ┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[1].apply.transformations[1] (RewritePath)
 ┃ ┃ ┃ ┃ ┗ ┗ Debug Path 'deploy/tpfork8s/.tanzu/config/spring-music.yml' matched '^(?<folder>.*/)?(?<filename>([^/]+?|)(?=(?<ext>\.[^/.]*)?)$)' with groups {ext=.yml, folder=deploy/tpfork8s/.tanzu/config/, filename=spring-music.yml, g0=deploy/tpfork8s/.tanzu/config/spring-music.yml, g1=deploy/tpfork8s/.tanzu/config/, g2=spring-music.yml, g3=spring-music.yml, g4=.yml} and was rewritten to '.tanzu/config/postgres-music.yml'
-┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[2] (IfElse)
-┃ ┃ ┃ ┃ ┃ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[2].then (Let)
-┃ ┃ ┃ ┃ ┃ Debug Adding symbol id with value 'b01538'
-┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[2].then.in.apply (Chain)
-┃ ┃ ┃ ┃ ┃ ┃  Info Running Chain(ReplaceText, OpenRewriteRecipe, RewritePath)
-┃ ┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[2].then.in.apply.transformations[0] (ReplaceText)
-┃ ┃ ┃ ┃ ┃ ┃ ┗  Info Will replace [spring-music->postgres-music]
-┃ ┃ ┃ ┃ ┃ ┃ ╺ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[2].then.in.apply.transformations[1] (OpenRewriteRecipe)
-┃ ┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[2].then.in.apply.transformations[2] (RewritePath)
-┃ ┃ ┃ ┃ ┗ ┗ ┗ Debug Path 'deploy/tpfork8s/.tanzu/config/spring-music-binding.yml' matched '^(?<folder>.*/)?(?<filename>([^/]+?|)(?=(?<ext>\.[^/.]*)?)$)' with groups {ext=.yml, folder=deploy/tpfork8s/.tanzu/config/, filename=spring-music-binding.yml, g0=deploy/tpfork8s/.tanzu/config/spring-music-binding.yml, g1=deploy/tpfork8s/.tanzu/config/, g2=spring-music-binding.yml, g3=spring-music-binding.yml, g4=.yml} and was rewritten to '.tanzu/config/postgres-music-binding.yml'
-┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[3] (IfElse)
-┃ ┃ ┃ ┃ ┗ null ()
-┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[4] (IfElse)
-┃ ┃ ┃ ┃ ┃ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[4].then.apply (Chain)
+┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[2].apply (Chain)
 ┃ ┃ ┃ ┃ ┃  Info Running Chain(ReplaceText, RewritePath)
-┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[4].then.apply.transformations[0] (ReplaceText)
+┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[2].apply.transformations[0] (ReplaceText)
 ┃ ┃ ┃ ┃ ┃ ┗  Info Will replace [spring-music->postgres-music]
-┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[4].then.apply.transformations[1] (RewritePath)
-┃ ┃ ┃ ┃ ┗ ┗ Debug Path 'deploy/tpfork8s/.tanzu/config/spring-music-postgresql-instance.yml' matched '^(?<folder>.*/)?(?<filename>([^/]+?|)(?=(?<ext>\.[^/.]*)?)$)' with groups {ext=.yml, folder=deploy/tpfork8s/.tanzu/config/, filename=spring-music-postgresql-instance.yml, g0=deploy/tpfork8s/.tanzu/config/spring-music-postgresql-instance.yml, g1=deploy/tpfork8s/.tanzu/config/, g2=spring-music-postgresql-instance.yml, g3=spring-music-postgresql-instance.yml, g4=.yml} and was rewritten to '.tanzu/config/postgres-music-postgresql-instance.yml'
-┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[5] (IfElse)
+┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[2].apply.transformations[1] (RewritePath)
+┃ ┃ ┃ ┃ ┗ ┗ Debug Path 'deploy/tpfork8s/.tanzu/config/httproute-spring-music.yml' matched '^(?<folder>.*/)?(?<filename>([^/]+?|)(?=(?<ext>\.[^/.]*)?)$)' with groups {ext=.yml, folder=deploy/tpfork8s/.tanzu/config/, filename=httproute-spring-music.yml, g0=deploy/tpfork8s/.tanzu/config/httproute-spring-music.yml, g1=deploy/tpfork8s/.tanzu/config/, g2=httproute-spring-music.yml, g3=httproute-spring-music.yml, g4=.yml} and was rewritten to '.tanzu/config/httproute-postgres-music.yml'
+┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[3] (IfElse)
+┃ ┃ ┃ ┃ ┃ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[3].then (Let)
+┃ ┃ ┃ ┃ ┃ Debug Adding symbol id with value '47a189'
+┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[3].then.in.apply (Chain)
+┃ ┃ ┃ ┃ ┃ ┃  Info Running Chain(ReplaceText, OpenRewriteRecipe, RewritePath)
+┃ ┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[3].then.in.apply.transformations[0] (ReplaceText)
+┃ ┃ ┃ ┃ ┃ ┃ ┗  Info Will replace [spring-music->postgres-music]
+┃ ┃ ┃ ┃ ┃ ┃ ╺ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[3].then.in.apply.transformations[1] (OpenRewriteRecipe)
+┃ ┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[3].then.in.apply.transformations[2] (RewritePath)
+┃ ┃ ┃ ┃ ┗ ┗ ┗ Debug Path 'deploy/tpfork8s/.tanzu/config/service-binding-music.yml' matched '^(?<folder>.*/)?(?<filename>([^/]+?|)(?=(?<ext>\.[^/.]*)?)$)' with groups {ext=.yml, folder=deploy/tpfork8s/.tanzu/config/, filename=service-binding-music.yml, g0=deploy/tpfork8s/.tanzu/config/service-binding-music.yml, g1=deploy/tpfork8s/.tanzu/config/, g2=service-binding-music.yml, g3=service-binding-music.yml, g4=.yml} and was rewritten to '.tanzu/config/service-binding-music.yml'
+┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[4] (IfElse)
 ┃ ┃ ┃ ┃ ┗ null ()
+┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[5] (IfElse)
+┃ ┃ ┃ ┃ ┃ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[5].then.apply (Chain)
+┃ ┃ ┃ ┃ ┃  Info Running Chain(ReplaceText, RewritePath)
+┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[5].then.apply.transformations[0] (ReplaceText)
+┃ ┃ ┃ ┃ ┃ ┗  Info Will replace [spring-music->postgres-music]
+┃ ┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[5].then.apply.transformations[1] (RewritePath)
+┃ ┃ ┃ ┃ ┗ ┗ Debug Path 'deploy/tpfork8s/.tanzu/config/postgresql-instance-music.yml' matched '^(?<folder>.*/)?(?<filename>([^/]+?|)(?=(?<ext>\.[^/.]*)?)$)' with groups {ext=.yml, folder=deploy/tpfork8s/.tanzu/config/, filename=postgresql-instance-music.yml, g0=deploy/tpfork8s/.tanzu/config/postgresql-instance-music.yml, g1=deploy/tpfork8s/.tanzu/config/, g2=postgresql-instance-music.yml, g3=postgresql-instance-music.yml, g4=.yml} and was rewritten to '.tanzu/config/postgresql-instance-music.yml'
 ┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[6] (IfElse)
+┃ ┃ ┃ ┃ ┗ null ()
+┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[1].otherwise.then.transformations[7] (IfElse)
 ┃ ┃ ┃ ┃ ┗ null ()
 ┃ ┃ ┃ ┃ ┏ Debug LICENSE matched [!'deploy/**'] -> included
 ┃ ┃ ┃ ┃ ┃ Debug .gitignore matched [!'deploy/**'] -> included
@@ -131,9 +138,9 @@
 ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/templates/footer.html matched [!'deploy/**'] -> included
 ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/templates/header.html matched [!'deploy/**'] -> included
 ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/templates/albumForm.html matched [!'deploy/**'] -> included
-┃ ┃ ┃ ┃ ┃ Debug deploy/tpfork8s/.tanzu/config/spring-music-mysql-instance.yml didn't match [!'deploy/**'] -> excluded
-┃ ┃ ┃ ┃ ┃ Debug deploy/tpfork8s/.tanzu/config/spring-music-mongodb-instance.yml didn't match [!'deploy/**'] -> excluded
-┃ ┃ ┃ ┃ ┃ Debug deploy/tpfork8s/.tanzu/config/spring-music-redis-instance.yml didn't match [!'deploy/**'] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug deploy/tpfork8s/.tanzu/config/redis-instance-music.yml didn't match [!'deploy/**'] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug deploy/tpfork8s/.tanzu/config/mysql-instance-music.yml didn't match [!'deploy/**'] -> excluded
+┃ ┃ ┃ ┃ ┃ Debug deploy/tpfork8s/.tanzu/config/mongodb-instance-music.yml didn't match [!'deploy/**'] -> excluded
 ┃ ┃ ┃ ┃ ┃ Debug README.md matched [!'deploy/**'] -> included
 ┃ ┃ ┃ ┃ ┃ Debug build.gradle matched [!'deploy/**'] -> included
 ┃ ┃ ┃ ┃ ┃ Debug src/test/java/com/example/music/ApplicationTests.java matched [!'deploy/**'] -> included
@@ -152,8 +159,9 @@
 ┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/example/music/domain/RandomIdGenerator.java matched [!'deploy/**'] -> included
 ┃ ┃ ┃ ┃ ┃ Debug tanzu.yml matched [!'deploy/**'] -> included
 ┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/postgres-music.yml matched [!'deploy/**'] -> included
-┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/postgres-music-binding.yml matched [!'deploy/**'] -> included
-┃ ┃ ┃ ┗ ┗ Debug .tanzu/config/postgres-music-postgresql-instance.yml matched [!'deploy/**'] -> included
+┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/httproute-postgres-music.yml matched [!'deploy/**'] -> included
+┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/service-binding-music.yml matched [!'deploy/**'] -> included
+┃ ┃ ┃ ┗ ┗ Debug .tanzu/config/postgresql-instance-music.yml matched [!'deploy/**'] -> included
 ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[2] (IfElse)
 ┃ ┃ ┃ ┃ Debug LICENSE matched [!'src/main/java/com/example/music/config/data/**' && !'src/main/java/com/example/music/repositories/mongodb/**' && !'src/main/java/com/example/music/repositories/redis/**'] -> included
 ┃ ┃ ┃ ┃ Debug .gitignore matched [!'src/main/java/com/example/music/config/data/**' && !'src/main/java/com/example/music/repositories/mongodb/**' && !'src/main/java/com/example/music/repositories/redis/**'] -> included
@@ -197,8 +205,9 @@
 ┃ ┃ ┃ ┃ Debug src/main/java/com/example/music/domain/RandomIdGenerator.java matched [!'src/main/java/com/example/music/config/data/**' && !'src/main/java/com/example/music/repositories/mongodb/**' && !'src/main/java/com/example/music/repositories/redis/**'] -> included
 ┃ ┃ ┃ ┃ Debug tanzu.yml matched [!'src/main/java/com/example/music/config/data/**' && !'src/main/java/com/example/music/repositories/mongodb/**' && !'src/main/java/com/example/music/repositories/redis/**'] -> included
 ┃ ┃ ┃ ┃ Debug .tanzu/config/postgres-music.yml matched [!'src/main/java/com/example/music/config/data/**' && !'src/main/java/com/example/music/repositories/mongodb/**' && !'src/main/java/com/example/music/repositories/redis/**'] -> included
-┃ ┃ ┃ ┃ Debug .tanzu/config/postgres-music-binding.yml matched [!'src/main/java/com/example/music/config/data/**' && !'src/main/java/com/example/music/repositories/mongodb/**' && !'src/main/java/com/example/music/repositories/redis/**'] -> included
-┃ ┃ ┃ ┗ Debug .tanzu/config/postgres-music-postgresql-instance.yml matched [!'src/main/java/com/example/music/config/data/**' && !'src/main/java/com/example/music/repositories/mongodb/**' && !'src/main/java/com/example/music/repositories/redis/**'] -> included
+┃ ┃ ┃ ┃ Debug .tanzu/config/httproute-postgres-music.yml matched [!'src/main/java/com/example/music/config/data/**' && !'src/main/java/com/example/music/repositories/mongodb/**' && !'src/main/java/com/example/music/repositories/redis/**'] -> included
+┃ ┃ ┃ ┃ Debug .tanzu/config/service-binding-music.yml matched [!'src/main/java/com/example/music/config/data/**' && !'src/main/java/com/example/music/repositories/mongodb/**' && !'src/main/java/com/example/music/repositories/redis/**'] -> included
+┃ ┃ ┃ ┗ Debug .tanzu/config/postgresql-instance-music.yml matched [!'src/main/java/com/example/music/config/data/**' && !'src/main/java/com/example/music/repositories/mongodb/**' && !'src/main/java/com/example/music/repositories/redis/**'] -> included
 ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[3] (IfElse)
 ┃ ┃ ┃ ┗ null ()
 ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[4] (IfElse)
@@ -206,7 +215,7 @@
 ┃ ┃ ┃ ╺  Info Will replace [spring-music->postgres-music]
 ┃ ┃ ┃ ╺  Info Will replace [JAVA_VERSION->21]
 ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[7] (Let)
-┃ ┃ ┃ ┃ Debug Adding symbol uuid with value '16944912-334b-4955-b4b8-3ccfbf6ef985'
+┃ ┃ ┃ ┃ Debug Adding symbol uuid with value 'fb2202c2-52fc-40fa-9c91-9c44703ca5c6'
 ┃ ┃ ┃ ┃ ┏ engine.transformations[1].validated.transformations[7].in (Chain)
 ┃ ┃ ┃ ┃ ┃  Info Running Chain(ApplyTo, Merge, UniquePath, Merge, UniquePath, Provenance)
 ┃ ┃ ┃ ┃ ┃ ╺ engine.transformations[1].validated.transformations[7].in.transformations[0].apply (OpenRewriteRecipe)
@@ -248,8 +257,9 @@
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/example/music/domain/ApplicationInfo.java matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/example/music/domain/RandomIdGenerator.java matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/postgres-music.yml matched ['**'] -> included
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/postgres-music-binding.yml matched ['**'] -> included
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/postgres-music-postgresql-instance.yml matched ['**'] -> included
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/httproute-postgres-music.yml matched ['**'] -> included
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/service-binding-music.yml matched ['**'] -> included
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/postgresql-instance-music.yml matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug settings.gradle matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug README.md matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┗ Debug tanzu.yml matched ['**'] -> included
@@ -274,7 +284,6 @@
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'src/main/resources/static/js/albums.js', will use the one appearing last 
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'src/main/resources/static/js/info.js', will use the one appearing last 
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'src/main/java/com/example/music/repositories/jpa/JpaAlbumRepository.java', will use the one appearing last 
-┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path '.tanzu/config/postgres-music-binding.yml', will use the one appearing last 
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'src/main/resources/static/templates/footer.html', will use the one appearing last 
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'src/main/resources/static/templates/status.html', will use the one appearing last 
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'src/main/resources/static/js/app.js', will use the one appearing last 
@@ -285,9 +294,11 @@
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'src/test/java/com/example/music/ApplicationTests.java', will use the one appearing last 
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'src/main/resources/static/img/glyphicons-halflings-white.png', will use the one appearing last 
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'LICENSE', will use the one appearing last 
+┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path '.tanzu/config/httproute-postgres-music.yml', will use the one appearing last 
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'settings.gradle', will use the one appearing last 
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'src/main/resources/albums.json', will use the one appearing last 
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'src/main/resources/static/js/errors.js', will use the one appearing last 
+┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path '.tanzu/config/postgresql-instance-music.yml', will use the one appearing last 
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'src/main/resources/static/templates/albumForm.html', will use the one appearing last 
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'src/main/resources/static/css/app.css', will use the one appearing last 
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'src/main/java/com/example/music/Application.java', will use the one appearing last 
@@ -298,10 +309,10 @@
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'src/main/resources/static/index.html', will use the one appearing last 
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'src/main/resources/static/img/glyphicons-halflings.png', will use the one appearing last 
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'src/main/resources/static/js/status.js', will use the one appearing last 
+┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path '.tanzu/config/service-binding-music.yml', will use the one appearing last 
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'src/main/java/com/example/music/domain/RandomIdGenerator.java', will use the one appearing last 
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'src/main/resources/static/templates/albums.html', will use the one appearing last 
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'src/main/java/com/example/music/web/ErrorController.java', will use the one appearing last 
-┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path '.tanzu/config/postgres-music-postgresql-instance.yml', will use the one appearing last 
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'src/main/resources/static/css/multi-columns-row.css', will use the one appearing last 
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path '.tanzu/config/postgres-music.yml', will use the one appearing last 
 ┃ ┃ ┃ ┃ ┃ ┃ Debug Multiple representations for path 'tanzu.yml', will use the one appearing last 
@@ -317,7 +328,6 @@
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/js/albums.js matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/js/info.js matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/example/music/repositories/jpa/JpaAlbumRepository.java matched ['**'] -> included
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/postgres-music-binding.yml matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/templates/footer.html matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/templates/status.html matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/js/app.js matched ['**'] -> included
@@ -328,9 +338,11 @@
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/test/java/com/example/music/ApplicationTests.java matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/img/glyphicons-halflings-white.png matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug LICENSE matched ['**'] -> included
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/httproute-postgres-music.yml matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug settings.gradle matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/albums.json matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/js/errors.js matched ['**'] -> included
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/postgresql-instance-music.yml matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/templates/albumForm.html matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/css/app.css matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/example/music/Application.java matched ['**'] -> included
@@ -341,10 +353,10 @@
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/index.html matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/img/glyphicons-halflings.png matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/js/status.js matched ['**'] -> included
+┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/service-binding-music.yml matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/example/music/domain/RandomIdGenerator.java matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/templates/albums.html matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/example/music/web/ErrorController.java matched ['**'] -> included
-┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/postgres-music-postgresql-instance.yml matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/css/multi-columns-row.css matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/postgres-music.yml matched ['**'] -> included
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug tanzu.yml matched ['**'] -> included
@@ -362,7 +374,6 @@
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/js/albums.js didn't match [gradlew*, gradle/**] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/js/info.js didn't match [gradlew*, gradle/**] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/example/music/repositories/jpa/JpaAlbumRepository.java didn't match [gradlew*, gradle/**] -> excluded
-┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/postgres-music-binding.yml didn't match [gradlew*, gradle/**] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/templates/footer.html didn't match [gradlew*, gradle/**] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/templates/status.html didn't match [gradlew*, gradle/**] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/js/app.js didn't match [gradlew*, gradle/**] -> excluded
@@ -373,9 +384,11 @@
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/test/java/com/example/music/ApplicationTests.java didn't match [gradlew*, gradle/**] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/img/glyphicons-halflings-white.png didn't match [gradlew*, gradle/**] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug LICENSE didn't match [gradlew*, gradle/**] -> excluded
+┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/httproute-postgres-music.yml didn't match [gradlew*, gradle/**] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug settings.gradle didn't match [gradlew*, gradle/**] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/albums.json didn't match [gradlew*, gradle/**] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/js/errors.js didn't match [gradlew*, gradle/**] -> excluded
+┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/postgresql-instance-music.yml didn't match [gradlew*, gradle/**] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/templates/albumForm.html didn't match [gradlew*, gradle/**] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/css/app.css didn't match [gradlew*, gradle/**] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/example/music/Application.java didn't match [gradlew*, gradle/**] -> excluded
@@ -386,10 +399,10 @@
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/index.html didn't match [gradlew*, gradle/**] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/img/glyphicons-halflings.png didn't match [gradlew*, gradle/**] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/js/status.js didn't match [gradlew*, gradle/**] -> excluded
+┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/service-binding-music.yml didn't match [gradlew*, gradle/**] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/example/music/domain/RandomIdGenerator.java didn't match [gradlew*, gradle/**] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/templates/albums.html didn't match [gradlew*, gradle/**] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/java/com/example/music/web/ErrorController.java didn't match [gradlew*, gradle/**] -> excluded
-┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/postgres-music-postgresql-instance.yml didn't match [gradlew*, gradle/**] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug src/main/resources/static/css/multi-columns-row.css didn't match [gradlew*, gradle/**] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug .tanzu/config/postgres-music.yml didn't match [gradlew*, gradle/**] -> excluded
 ┃ ┃ ┃ ┃ ┃ ┃ ┃ ┃ Debug tanzu.yml didn't match [gradlew*, gradle/**] -> excluded
